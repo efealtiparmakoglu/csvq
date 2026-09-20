@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python: ["3.9", "3.12", "3.13"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests
+      - name: CLI smoke
+        run: |
+          printf 'a,b\n1,x\n2,y\n' > /tmp/smoke.csv
+          python3 -m csvq.cli "SELECT b FROM /tmp/smoke.csv WHERE a = 2" -f json
+          python3 -m csvq.cli --version

@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "csvq"
+version = "1.0.0"
+description = "Query CSV files with a SQL subset — WHERE, JOIN, GROUP BY, aggregates — with type inference and multiple output formats. Zero dependencies."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+keywords = ["csv", "sql", "cli", "query", "join"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Utilities",
+]
+
+[project.scripts]
+csvq = "csvq.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["csvq*"]
