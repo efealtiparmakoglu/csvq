@@ -4,6 +4,7 @@ Every value starts as a string from the csv module. A column is inferred as
 int, float, bool or NULL-able variants when every non-empty value matches;
 empty strings become None for typed columns and stay "" for text columns.
 """
+from __future__ import annotations
 
 import csv
 from dataclasses import dataclass

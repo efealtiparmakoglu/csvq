@@ -3,6 +3,7 @@
 Token kinds: NAME, NUMBER, STRING, OP, PUNCT, EOF. Keywords are recognized
 case-insensitively at parse time from NAME tokens.
 """
+from __future__ import annotations
 
 from dataclasses import dataclass
 

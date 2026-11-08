@@ -1,4 +1,5 @@
 """Query engine: evaluates a Select AST over loaded tables."""
+from __future__ import annotations
 
 import re
 from pathlib import Path

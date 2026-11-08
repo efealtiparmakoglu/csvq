@@ -13,6 +13,7 @@ Grammar (the supported SQL subset):
     item: * | agg | expr [AS alias]
     agg: COUNT ( * | expr ) | (SUM|AVG|MIN|MAX) ( expr )
 """
+from __future__ import annotations
 
 from dataclasses import dataclass, field
 

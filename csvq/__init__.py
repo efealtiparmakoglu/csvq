@@ -1,4 +1,5 @@
 """csvq — query CSV files with a SQL subset. Zero dependencies."""
+from __future__ import annotations
 
 from .engine import QueryError, run_query
 from .infer import load_table

@@ -1,4 +1,5 @@
 """Output formatters: table (aligned), csv, tsv, json, markdown."""
+from __future__ import annotations
 
 import csv
 import io
